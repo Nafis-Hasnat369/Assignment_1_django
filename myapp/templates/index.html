@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Home | Meals{% endblock %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4 my-5 ">
+    {% for meal in meals %}
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ meal.strMealThumb }}" class="card-img-top" alt="{{ meal.strMeal }}">
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ meal.strMeal }}</h4>
+                <p>Meal ID: <span class="text-primary fw-bold">{{ meal.idMeal }}</span></p>
+                <p>{{ meal.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
